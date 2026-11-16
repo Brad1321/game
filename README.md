@@ -7,7 +7,7 @@ Everything needed to turn the game into an installable Android app (`.apk`). The
 1. Create a free **private** repository on github.com (e.g. `pokemon-showdown`).
 2. Upload everything in this folder to it (drag and drop on the repo page; keep the `.github` folder).
 3. Open the repo's **Actions** tab → **Build Android APK** → **Run workflow**. (It also runs automatically on every push.)
-4. After ~5 minutes, open the finished run and download **pokemon-showdown-apk** — it contains `app-debug.apk`.
+4. After ~5 minutes the APK is published automatically at **Releases → Latest** (direct link: `https://github.com/<you>/<repo>/releases/latest/download/pokemon-showdown.apk`). Anyone with the link can download it — no GitHub account needed. (It's also attached to the run as an artifact.)
 5. Send that file to your friends (AirDrop isn't for Android — use Drive, email, WhatsApp, or a USB cable).
 
 ## Installing on a phone (sideloading)

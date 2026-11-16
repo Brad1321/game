@@ -3,6 +3,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main, master]
+permissions:
+  contents: write
 jobs:
   apk:
     runs-on: ubuntu-latest
@@ -30,3 +32,11 @@ jobs:
         with:
           name: pokemon-showdown-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+      - name: Publish download link
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk pokemon-showdown.apk
+          gh release delete latest --cleanup-tag --yes || true
+          gh release create latest pokemon-showdown.apk --title "Pokémon Showdown (latest)" --notes "Latest build. Download pokemon-showdown.apk on an Android phone and install it."
