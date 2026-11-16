@@ -1,0 +1,6 @@
+{
+  "appId": "com.friends.pokemonshowdown",
+  "appName": "Pokémon Showdown",
+  "webDir": "www",
+  "android": { "backgroundColor": "#0b0b10" }
+}
